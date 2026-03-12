@@ -1,0 +1,1 @@
+Ein projekt für eine Electron software die bestimmte apps solange blockt, bis eine bestimmte sache erfüllt wurde
