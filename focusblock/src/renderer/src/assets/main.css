@@ -5,14 +5,13 @@
   background-image: url('./wavy-lines.svg');
   background-size: cover;
 }
-
+/*main grid System for the front page*/
 .parent {
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr; /* Standard: Eine Spalte für schmale Fenster */
 }
 
-/* Dein spezielles Layout erst ab einer Mindestbreite */
 @media (min-width: 800px) {
   .parent {
     grid-template-columns: repeat(8, 1fr);
