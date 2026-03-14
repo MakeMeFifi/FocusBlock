@@ -5,3 +5,30 @@
   background-image: url('./wavy-lines.svg');
   background-size: cover;
 }
+
+.parent {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr; /* Standard: Eine Spalte für schmale Fenster */
+}
+
+/* Dein spezielles Layout erst ab einer Mindestbreite */
+@media (min-width: 800px) {
+  .parent {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 3fr repeat(11, 1fr);
+  }
+
+  .div1 {
+    grid-area: 1 / 1 / 2 / 9;
+  }
+  .div2 {
+    grid-area: 2 / 1 / 10 / 6;
+  }
+  .div3 {
+    grid-area: 2 / 6 / 7 / 9;
+  }
+  .div4 {
+    grid-area: 5 / 6 / 12 / 9;
+  }
+}
