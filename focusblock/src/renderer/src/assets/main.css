@@ -5,29 +5,39 @@
   background-image: url('./wavy-lines.svg');
   background-size: cover;
 }
-/*main grid System for the front page*/
-.parent {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr; /* Standard: Eine Spalte für schmale Fenster */
+/*Custom bootstrap for better card look*/
+.card {
+  background-color: #2a2a2a;
+  border-color: #454545;
+  border-radius: 0.75rem;
+  color: white;
 }
 
-@media (min-width: 800px) {
-  .parent {
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 3fr repeat(11, 1fr);
-  }
+.text-muted-custom {
+  color: #a0a0a0;
+}
 
-  .div1 {
-    grid-area: 1 / 1 / 2 / 9;
-  }
-  .div2 {
-    grid-area: 2 / 1 / 10 / 6;
-  }
-  .div3 {
-    grid-area: 2 / 6 / 7 / 9;
-  }
-  .div4 {
-    grid-area: 5 / 6 / 12 / 9;
-  }
+.icon-bg-blue {
+  background-color: rgba(13, 110, 253, 0.2);
+  color: #0d6efd;
+}
+.icon-bg-green {
+  background-color: rgba(25, 135, 84, 0.2);
+  color: #198754;
+}
+.icon-bg-orange {
+  background-color: rgba(253, 126, 20, 0.2);
+  color: #fd7e14;
+}
+.icon-bg-purple {
+  background-color: rgba(111, 66, 193, 0.2);
+  color: #6f42c1;
+}
+
+.stat-card {
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
 }
