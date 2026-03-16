@@ -1,7 +1,7 @@
-import { title } from 'process'
 import ActiveTasks from './components/ActiveTasks'
 import Navbar from './components/Navbar'
 import Overview from './components/Overview'
+import QuickActions from './components/QuickActions'
 
 function App(): React.JSX.Element {
   return (
@@ -39,6 +39,11 @@ function App(): React.JSX.Element {
                   }
                 ]}
               />
+            </div>
+            <div className="col-12 col-lg-4">
+              <div className="d-flex flex-column">
+                <QuickActions />
+              </div>
             </div>
           </div>
         </main>
