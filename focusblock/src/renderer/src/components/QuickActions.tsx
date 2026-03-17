@@ -1,4 +1,4 @@
-import { Plus, Upload, Users, FolderPlus, Calendar, Flag, Tag } from 'lucide-react'
+import { Plus, Upload, Users, FolderPlus, Calendar, Tag } from 'lucide-react'
 import { useState } from 'react'
 
 const actions = [
@@ -31,11 +31,11 @@ const actions = [
 export function QuickActions(): React.JSX.Element {
   const [activeModal, setActiveModal] = useState<string | null>(null)
 
-  const openModal = (modalId: string) => {
+  const openModal = (modalId: string): void => {
     setActiveModal(modalId)
   }
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setActiveModal(null)
   }
 
