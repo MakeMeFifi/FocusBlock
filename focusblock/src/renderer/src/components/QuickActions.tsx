@@ -1,4 +1,4 @@
-import { Plus, Upload, Users, FolderPlus, Calendar, Tag } from 'lucide-react'
+import { Plus, Upload, FolderPlus, Calendar, Tag, AppWindow } from 'lucide-react'
 import { useState } from 'react'
 
 const actions = [
@@ -13,18 +13,6 @@ const actions = [
     label: 'Datei hochladen',
     icon: Upload,
     color: '#3b82f6'
-  },
-  {
-    id: 'invite-team',
-    label: 'Team einladen',
-    icon: Users,
-    color: '#22c55e'
-  },
-  {
-    id: 'start-project',
-    label: 'Projekt starten',
-    icon: FolderPlus,
-    color: '#f59e0b'
   }
 ]
 
@@ -60,6 +48,16 @@ export function QuickActions(): React.JSX.Element {
                 </div>
               )
             })}
+            <div className="col-12">
+              <button
+                className="btn w-100 d-flex flex-column align-items-center gap-2 py-3 text-white"
+                style={{ backgroundColor: '#22c55e', borderColor: '#22c55e' }}
+                onClick={() => openModal('invite-team')}
+              >
+                <AppWindow size={20} />
+                <span className="small">Software bearbeiten</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -283,8 +281,8 @@ export function QuickActions(): React.JSX.Element {
             >
               <div className="modal-header border-bottom" style={{ borderColor: '#454545' }}>
                 <h5 className="modal-title d-flex align-items-center gap-2">
-                  <Users size={20} style={{ color: '#22c55e' }} />
-                  Team-Mitglied einladen
+                  <AppWindow size={20} style={{ color: '#22c55e' }} />
+                  Software bearbeiten
                 </h5>
                 <button
                   type="button"
@@ -498,7 +496,7 @@ export function QuickActions(): React.JSX.Element {
                   </div>
                   <div className="mb-3">
                     <label htmlFor="projectTeam" className="form-label">
-                      Team-Mitglieder hinzufügen
+                      Software bearbeiten
                     </label>
                     <input
                       type="text"
@@ -511,7 +509,6 @@ export function QuickActions(): React.JSX.Element {
                         color: '#f7f7f7'
                       }}
                     />
-                    <div className="form-text">Du kannst später weitere Mitglieder hinzufügen</div>
                   </div>
                 </form>
               </div>
