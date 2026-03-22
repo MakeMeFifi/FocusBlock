@@ -4,7 +4,6 @@ interface Task {
   id: number
   title: string
   deadline: string
-  project: string
   uploaded: boolean
 }
 
@@ -36,7 +35,6 @@ function ActiveTasks({ task }: TaskList): React.JSX.Element {
                   </div>
                 )}
               </div>
-              <p className="small text-muted-custom mb-0">{t.project}</p>
               <div className="d-flex align-items-center gap-2 mb-3 small text-muted-custom">
                 <Clock size={16} />
                 <span>Deadline: {t.deadline}</span>

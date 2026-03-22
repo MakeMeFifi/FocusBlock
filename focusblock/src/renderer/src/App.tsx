@@ -28,14 +28,12 @@ function App(): React.JSX.Element {
                     id: 1,
                     title: 'test',
                     deadline: 'heute',
-                    project: 'tester',
                     uploaded: false
                   },
                   {
                     id: 1,
                     title: 'test',
                     deadline: 'heute',
-                    project: 'tester',
                     uploaded: true
                   }
                 ]}
