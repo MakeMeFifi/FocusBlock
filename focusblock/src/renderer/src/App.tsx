@@ -1,10 +1,27 @@
+import { useEffect, useState } from 'react'
 import ActiveTasks from './components/ActiveTasks'
 import BlockedOverview from './components/BlockedOverview'
 import Navbar from './components/Navbar'
 import Overview from './components/Overview'
 import QuickActions from './components/QuickActions'
+import { supabase } from './supabaseClient'
 
 function App(): React.JSX.Element {
+  const [tasks, setTasks] = useState([{}])
+
+  useEffect(() => {
+    const loadData = async (): Promise<void> => {
+      const { data, error } = await supabase.from('tasks').select('*')
+      if (error) {
+        console.error('Error loading tasks:', error)
+      } else {
+        setTasks(data ?? [])
+        console.log('Loaded tasks:', data)
+      }
+    }
+    loadData()
+  }, [])
+
   return (
     <>
       <Navbar />
@@ -22,22 +39,7 @@ function App(): React.JSX.Element {
           </div>
           <div className="row g-4 mb-4">
             <div className="col-12 col-lg-8">
-              <ActiveTasks
-                task={[
-                  {
-                    id: 1,
-                    title: 'test',
-                    deadline: 'heute',
-                    uploaded: false
-                  },
-                  {
-                    id: 1,
-                    title: 'test',
-                    deadline: 'heute',
-                    uploaded: true
-                  }
-                ]}
-              />
+              <ActiveTasks task={[]} />
             </div>
             <div className="col-12 col-lg-4">
               <div className="d-flex flex-column gap-3">
